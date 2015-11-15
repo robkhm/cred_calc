@@ -159,6 +159,38 @@ public class CredCalc extends JFrame {
 		JButton btnNewButton = new JButton("\u0420\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0442\u044C");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				// Ввод данных
+				double sum = Double.valueOf(textField.getText());
+				double proc = Double.valueOf(textField_1.getText());
+				double length = Double.valueOf(textField_2.getText());
+				boolean ann = rdbtnNewRadioButton.isSelected();
+				double em = Double.valueOf(textField_3.getText());
+				boolean em_sum = comboBox.getSelectedIndex() == 0;
+				double ev = Double.valueOf(textField_4.getText());
+				boolean ev_proc = comboBox_1.getSelectedIndex() == 0;
+				
+				// Вычисление
+				double p_min = sum, p_max = 0, p_total = 0;
+				for(int i = 0; i < length; i++) {
+					double p = 0;
+					double P = (proc / 1200);
+					if (ann) p = sum * (P + P / (Math.pow(P + 1, length) - 1));
+					else p = sum / length + (sum - i * sum / length) * proc / (1200);
+					if (em_sum) p += sum * em / 100;
+					else p += (sum - i * sum / length) * em / 100;
+					if (p_min > p) p_min = p;
+					if (p_max < p) p_max = p;
+					p_total += p;
+				}
+				if (ev_proc) p_total += sum * ev / 100;
+				else p_total += ev;
+				
+				// Вывод данных
+				if (p_min != p_max) textField_5.setText(String.format("%.2f", p_min) + " ... " + String.format("%.2f", p_max));
+				else textField_5.setText(String.format("%.2f", p_min));
+				textField_6.setText(String.format("%.2f", p_total - sum));
+				textField_7.setText(String.format("%.2f", p_total));
+				
 			}
 		});
 		btnNewButton.setBounds(185, 204, 165, 23);
@@ -219,6 +251,14 @@ public class CredCalc extends JFrame {
 		JButton button = new JButton("\u041E\u0447\u0438\u0441\u0442\u0438\u0442\u044C");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				textField.setText("0");
+				textField_1.setText("0");
+				textField_2.setText("0");
+				textField_3.setText("0");
+				textField_4.setText("0");
+				textField_5.setText("");
+				textField_6.setText("");
+				textField_7.setText("");
 			}
 		});
 		button.setBounds(366, 203, 89, 23);
