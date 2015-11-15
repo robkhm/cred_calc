@@ -164,5 +164,65 @@ public class CredCalc extends JFrame {
 		btnNewButton.setBounds(185, 204, 165, 23);
 		getContentPane().add(btnNewButton);
 		
+		// Создание текстовой метки
+		JLabel label_8 = new JLabel("\u0415\u0436\u0435\u043C\u0435\u0441\u044F\u0447\u043D\u044B\u0439 \u043F\u043B\u0430\u0442\u0435\u0436");
+		label_8.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		label_8.setBounds(10, 233, 120, 14);
+		getContentPane().add(label_8);
+		
+		// Создание текстового поля
+		textField_5 = new JTextField();
+		textField_5.setColumns(10);
+		textField_5.setBounds(185, 233, 165, 20);
+		getContentPane().add(textField_5);
+		
+		// Создание текстовой метки
+		JLabel label_9 = new JLabel("\u0440\u0443\u0431.");
+		label_9.setBounds(363, 236, 46, 14);
+		getContentPane().add(label_9);
+		
+		// Создание текстовой метки
+		JLabel label_10 = new JLabel("\u041F\u0435\u0440\u0435\u043F\u043B\u0430\u0442\u0430 \u043F\u043E \u043A\u0440\u0435\u0434\u0438\u0442\u0443");
+		label_10.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		label_10.setBounds(10, 262, 120, 14);
+		getContentPane().add(label_10);
+		
+		// Создание текстового поля
+		textField_6 = new JTextField();
+		textField_6.setColumns(10);
+		textField_6.setBounds(185, 262, 165, 20);
+		getContentPane().add(textField_6);
+		
+		// Создание текстовой метки
+		JLabel label_11 = new JLabel("\u0440\u0443\u0431.");
+		label_11.setBounds(363, 265, 46, 14);
+		getContentPane().add(label_11);
+		
+		// Создание текстовой метки
+		JLabel label_12 = new JLabel("\u0412\u044B\u043F\u043B\u0430\u0442\u044B \u0437\u0430 \u0432\u0435\u0441\u044C \u0441\u0440\u043E\u043A");
+		label_12.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		label_12.setBounds(10, 290, 120, 14);
+		getContentPane().add(label_12);
+		
+		// Создание текстового поля
+		textField_7 = new JTextField();
+		textField_7.setColumns(10);
+		textField_7.setBounds(185, 290, 165, 20);
+		getContentPane().add(textField_7);
+		
+		// Создание текстовой метки
+		JLabel label_13 = new JLabel("\u0440\u0443\u0431.");
+		label_13.setBounds(363, 293, 46, 14);
+		getContentPane().add(label_13);
+		
+		// Создание кнопки очистки
+		JButton button = new JButton("\u041E\u0447\u0438\u0441\u0442\u0438\u0442\u044C");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		button.setBounds(366, 203, 89, 23);
+		getContentPane().add(button);
+		
 	}
 }
